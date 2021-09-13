@@ -1,3 +1,3 @@
 # Morse-waffle
 
-Site de tradução para codigos morses sugerido pela minha melhor amiga e o Tio Carlos!
+Um programa simples parecido com o cmd pra automatizar tarefas que eu faço no dia a dia

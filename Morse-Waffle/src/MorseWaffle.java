@@ -54,7 +54,7 @@ public class MorseWaffle {
 		// Main Text Box
 		mainInput = new PlaceholderTextField();
 	    mainInput.setBounds(5, 415, 475, 30);
-	    mainInput.setPlaceholder("Digite Sua Função");
+	    mainInput.setPlaceholder("Digite Sua FunÃ§Ã£o");
 	    mainInput.setBackground(Color.black);
 	    mainInput.setCaretColor(Color.green);
 	    mainInput.setForeground(Color.green);
@@ -178,6 +178,7 @@ public class MorseWaffle {
 			);
 		}
 		
+		// If Command Not Found
 		else if (gamesCheck == false && clearCheck == false && writeCheck == false && gameSelect == 0 && matrixCheck == false && openBrowserCheck == false) {
 			outputArea.append("Function '" + mainInputResults + "' not found." + NEW_LINE);
 		}

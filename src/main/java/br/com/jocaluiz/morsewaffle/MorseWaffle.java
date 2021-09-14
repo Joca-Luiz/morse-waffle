@@ -1,9 +1,10 @@
+package br.com.jocaluiz.morsewaffle;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;

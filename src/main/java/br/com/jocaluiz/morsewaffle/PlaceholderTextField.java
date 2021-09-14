@@ -1,10 +1,11 @@
+package br.com.jocaluiz.morsewaffle;
+
 // it wasn't made by me
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.text.Document;

@@ -13,7 +13,7 @@
 <p>No arquivo <i>MorseCommands</i> adicione seu comando com o seguinte codigo:</p>
 <img src="https://i.imgur.com/3OxbfEU.png" title="source: imgur.com" />
 
-<p>E então no arquivo <i>Morse Waffle</i> adicione o comando ao console na função <code>commands()</code></p>
+<p>E então no arquivo <i>MorseWaffle</i> adicione o comando ao console na função <code>commands()</code></p>
 <img src="https://i.imgur.com/yzbknWA.png" title="source: imgur.com" />
 
 <p>Execulte o programa e veja a mágica acontecer!</p>

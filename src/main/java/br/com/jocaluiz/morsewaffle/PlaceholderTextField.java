@@ -1,11 +1,10 @@
 package br.com.jocaluiz.morsewaffle;
 
-// it wasn't made by me
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.text.Document;
@@ -57,7 +56,7 @@ public class PlaceholderTextField extends JTextField {
 
         final Graphics2D g = (Graphics2D) pG;
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g.setColor(Color.green);
+        g.setColor(getDisabledTextColor());
         g.drawString(placeholder, getInsets().left, pG.getFontMetrics().getMaxAscent() + getInsets().top);
     }
 

@@ -1,5 +1,6 @@
 package br.com.jocaluiz.morsewaffle;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -56,7 +57,7 @@ public class PlaceholderTextField extends JTextField {
 
         final Graphics2D g = (Graphics2D) pG;
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g.setColor(getDisabledTextColor());
+        g.setColor(Color.green);
         g.drawString(placeholder, getInsets().left, pG.getFontMetrics().getMaxAscent() + getInsets().top);
     }
 

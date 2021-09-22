@@ -4,7 +4,7 @@
 <h3>Comandos</h3>
   <ul>
     <li>help: mostra todos os comandos disponiveis</li>
-    <li>echo <string>: escreve no console</li> 
+    <li>echo < string >: escreve no console</li> 
     <li>browser: abre o seu navegador padrão</li>
     <li>morse < parameter > < string >: utilize o parametro -t para decodificar a string, e -c para codificar a string. Função em testes pode ocorrer erros!</li>
   </ul>

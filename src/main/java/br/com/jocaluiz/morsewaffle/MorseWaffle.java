@@ -10,6 +10,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
+import java.net.MalformedURLException;
 
 public class MorseWaffle {
 	public static Dimension frameSize = new Dimension(500, 500);
@@ -20,7 +21,7 @@ public class MorseWaffle {
 	public static String inputResults;
 	public static MorseCommands mc = new MorseCommands();
 	
-	public static void main(String[]args) {
+	public static void main(String[]args) throws MalformedURLException {
 		// Creating frame
 		frame = new JFrame("Morse Waffle");
 		Container c = frame.getContentPane();
@@ -57,6 +58,9 @@ public class MorseWaffle {
 		
 		// Command 03
 		mc.browser("browser", inputResults, outputArea);
+		
+		// Command 04
+		mc.morse("morse ", inputResults, outputArea);
 	}
 
 	public static JFrame frameConfig(JFrame f, Dimension frameDimension, boolean frameVisible) {

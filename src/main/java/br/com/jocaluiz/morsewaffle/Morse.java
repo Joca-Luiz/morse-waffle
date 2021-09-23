@@ -1,101 +1,44 @@
 package br.com.jocaluiz.morsewaffle;
 
-public final class Morse {
+import javax.swing.JTextArea;
 
-	private static final class Simbolo {
-
-		public final char normal;
-		public final String morse;
-
-		Simbolo(char normal, String morse) {
-			this.normal = normal;
-			this.morse = morse;
-		}
-	}
-
-	private static final Simbolo[] SIMBOLOS = new Simbolo[] {
-	        new Simbolo('A', ".-"),
-	        new Simbolo('B', "-..."),
-	        new Simbolo('C', "-.-."),
-	        new Simbolo('D', "-.."),
-	        new Simbolo('E', "."),
-	        new Simbolo('F', "..-."),
-	        new Simbolo('G', "--."),
-	        new Simbolo('H', "...."),
-	        new Simbolo('I', ".."),
-	        new Simbolo('J', ".---"),
-	        new Simbolo('K', "-.-"),
-	        new Simbolo('L', ".-.."),
-	        new Simbolo('M', "--"),
-	        new Simbolo('N', "-."),
-	        new Simbolo('O', "---"),
-	        new Simbolo('P', ".--."),
-	        new Simbolo('Q', "--.-"),
-	        new Simbolo('R', ".-."),
-	        new Simbolo('S', "..."),
-	        new Simbolo('T', "-"),
-	        new Simbolo('U', "..-"),
-	        new Simbolo('V', "...-"),
-	        new Simbolo('W', ".--"),
-	        new Simbolo('X', "-..-"),
-	        new Simbolo('Y', "-.--"),
-	        new Simbolo('Z', "--.."),
-	        new Simbolo('0', "-----"),
-	        new Simbolo('1', ".---"),
-	        new Simbolo('2', "..---"),
-	        new Simbolo('3', "...--"),
-	        new Simbolo('4', "....-"),
-	        new Simbolo('5', "....."),
-	        new Simbolo('6', "-...."),
-	        new Simbolo('7', "--..."),
-	        new Simbolo('8', "---.."),
-	        new Simbolo('9', "----."),
-	        new Simbolo(' ', "   ")
-	};
-
-	public static String morse(String normal) {
-		StringBuilder textMorse = new StringBuilder();
-		for (char letraNormal : normal.toUpperCase().toCharArray()) {
-			if (textMorse.length() > 0) {
-				textMorse.append(" ");
+public class Morse {
+	public static String newline = "\n";
+	
+	public static void morse(String prefix, String pT, String pC, String input, JTextArea output) {
+		boolean prefixCheck = input.startsWith(prefix);
+		
+		if (prefixCheck) {
+			String parameter = input.replace(prefix, "");
+			
+			if (parameter.startsWith(pT)) {
+				String morse = parameter.replace(pT, "").replaceAll("[^/.-]", "");
+				if (morse == "") {
+					output.append("Morse Waffle/Morse> Please write some value to translate" + newline);
+				} else {
+					String translate = MorseFunction.normal(morse);
+					if (MorseFunction.error) {
+						output.append("Morse Waffle/Morse> Unable to translate. Please correct your entry" + newline);
+						MorseFunction.error = false;
+					} else {
+						output.append("Morse Waffle/Morse> " + translate + newline);
+					}
+				}
 			}
-			textMorse.append(letraMorse(letraNormal));
-		}
-		return textMorse.toString();
-	}
-
-	public static String normal(String morse) {
-		StringBuilder textNormal = new StringBuilder();
-		String[] palavrasMorse = morse.split("\\Q   \\E");
-		for (String palavraMorse : palavrasMorse) {
-			if (textNormal.length() > 0) {
-				textNormal.append(" ");
+			
+			else if (parameter.startsWith(pC)) {
+				String morse = parameter.replace(pC, "");
+				if (morse == "") {
+					output.append("Morse Waffle/Morse> Please write some value to code" + newline);
+				} else {
+					String translate = MorseFunction.morse(morse);
+					output.append("Morse Waffle/Morse> " + translate + newline);
+				}
 			}
-			String[] letrasMorse = palavraMorse.trim().split(" ");
-			for (String letraMorse : letrasMorse) {
-				textNormal.append(letraNormal(letraMorse));
+			
+			else {
+				output.append("Morse Waffle/Morse> " + "The parameter is incorrect. use the 'help' command for more information." + newline);
 			}
 		}
-		return textNormal.toString();
 	}
-
-	private static String letraMorse(char normal) {
-		for (Simbolo simbolo : SIMBOLOS) {
-			if (simbolo.normal == normal) {
-				return simbolo.morse;
-			}
-		}
-		throw new IllegalArgumentException("Símbolo inválido: \"" + normal + "\"");
-	}
-
-	private static char letraNormal(String morse) {
-		for (Simbolo simbolo : SIMBOLOS) {
-			if (simbolo.morse.equals(morse)) {
-				return simbolo.normal;
-			}
-		}
-		throw new IllegalArgumentException("Símbolo inválido: \"" + morse + "\"");
-	}
-
-	private Morse() {}
 }

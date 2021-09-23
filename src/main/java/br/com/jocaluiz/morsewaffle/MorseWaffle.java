@@ -19,7 +19,7 @@ public class MorseWaffle {
 	public static JTextArea outputArea;
 	public static PlaceholderTextField inputArea;
 	public static String inputResults;
-	public static MorseCommands mc = new MorseCommands();
+	public static WaffleCommands mc = new WaffleCommands();
 	
 	public static void main(String[]args) throws MalformedURLException {
 		// Creating frame
@@ -50,6 +50,9 @@ public class MorseWaffle {
 		// help command
 		mc.help("help", inputResults, outputArea);
 		
+		// Morse-Code Commands
+		Morse.morse("morse ", "-t ", "-c ", inputResults, outputArea);
+		
 		// Command 01
 		mc.echo("echo ", inputResults, outputArea);
 		
@@ -58,9 +61,6 @@ public class MorseWaffle {
 		
 		// Command 03
 		mc.browser("browser", inputResults, outputArea);
-		
-		// Command 04
-		mc.morse("morse ", inputResults, outputArea);
 	}
 
 	public static JFrame frameConfig(JFrame f, Dimension frameDimension, boolean frameVisible) {

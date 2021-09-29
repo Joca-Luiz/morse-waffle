@@ -11,6 +11,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 
+import br.com.jocaluiz.morsewaffle.morse.Morse;
+
 public class MorseWaffle {
 	public static Dimension frameSize = new Dimension(500, 500);
 	public static JFrame frame;
@@ -18,7 +20,7 @@ public class MorseWaffle {
 	public static JTextArea outputArea;
 	public static PlaceholderTextField inputArea;
 	public static String inputResults;
-	public static MorseCommands mc = new MorseCommands();
+	public static WaffleCommands mc = new WaffleCommands();
 	
 	public static void main(String[]args) {
 		// Creating frame
@@ -48,6 +50,10 @@ public class MorseWaffle {
 	public static void commands() {
 		// help command
 		mc.help("help", inputResults, outputArea);
+
+		// Morse command
+		String[] morseParams = {"-t ", "-c "};
+		Morse.morse("morse ", morseParams, inputResults, outputArea);
 		
 		// Command 01
 		mc.echo("echo ", inputResults, outputArea);
@@ -59,12 +65,11 @@ public class MorseWaffle {
 		mc.browser("browser", inputResults, outputArea);
 	}
 
-	public static JFrame frameConfig(JFrame f, Dimension frameDimension, boolean frameVisible) {
+	public static void frameConfig(JFrame f, Dimension frameDimension, boolean frameVisible) {
 		f.setSize(frameDimension);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setLayout(null);	
 		f.setVisible(frameVisible);
-		return frame;
 	}
 	
 	public static JLabel appTitle(int x, int y, int w, int h, String label, Color pColor) {

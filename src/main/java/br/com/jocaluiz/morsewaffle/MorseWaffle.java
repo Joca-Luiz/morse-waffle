@@ -11,6 +11,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 
+import br.com.jocaluiz.morsewaffle.extenso.Extenso;
+import br.com.jocaluiz.morsewaffle.extenso.NumeroPorExtenso;
 import br.com.jocaluiz.morsewaffle.morse.Morse;
 
 public class MorseWaffle {
@@ -54,6 +56,9 @@ public class MorseWaffle {
 		// Morse command
 		String[] morseParams = {"-t ", "-c "};
 		Morse.morse("morse ", morseParams, inputResults, outputArea);
+
+		// Full Number command
+		Extenso.fullNumber("fullnum ", inputResults, outputArea);
 		
 		// Command 01
 		mc.echo("echo ", inputResults, outputArea);

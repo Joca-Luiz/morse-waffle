@@ -17,6 +17,7 @@ public class WaffleCommands {
 					"02 - cls: clear the board;" + newline +
 					"03 - browser: open your default browser;" + newline +
 					"04 - morse <parameter> <string>: use the -t parameter to decode a string, and -c to encode a string. Function in tests can occur errors!" + newline +
+					"05 - fullnum <integer>: Use to enter a full number between 0 and 9999999999" + newline +
 					newline + "New commands added as needed..." + newline +
 					"Made by Joca | Powered by java" + newline
 			);

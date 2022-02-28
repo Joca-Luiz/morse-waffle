@@ -12,7 +12,9 @@ import java.awt.Font;
 import java.awt.event.KeyEvent;
 
 import br.com.jocaluiz.morsewaffle.extenso.Extenso;
-import br.com.jocaluiz.morsewaffle.extenso.NumeroPorExtenso;
+import br.com.jocaluiz.morsewaffle.Connection.Tables;
+import br.com.jocaluiz.morsewaffle.Mensager.MorseMensager;
+import br.com.jocaluiz.morsewaffle.Mensager.Recive;
 import br.com.jocaluiz.morsewaffle.morse.Morse;
 
 public class MorseWaffle {
@@ -25,6 +27,9 @@ public class MorseWaffle {
 	public static WaffleCommands mc = new WaffleCommands();
 	
 	public static void main(String[]args) {
+		// Creating tables
+		Tables.createTables();
+
 		// Creating frame
 		frame = new JFrame("Morse Waffle");
 		Container c = frame.getContentPane();
@@ -59,6 +64,9 @@ public class MorseWaffle {
 
 		// Full Number command
 		Extenso.fullNumber("fullnum ", inputResults, outputArea);
+
+		// Mensager
+		MorseMensager.mensager("mensager ", inputResults, outputArea);
 		
 		// Command 01
 		mc.echo("echo ", inputResults, outputArea);
@@ -114,7 +122,11 @@ public class MorseWaffle {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                if (evt.getKeyCode() == KeyEvent.VK_ENTER){
             	   inputResults = inputArea.getText();
-            	   commands();
+				   if (MorseMensager.modoDoMensager) {
+						MorseMensager.send(inputResults);
+				   } else {
+						commands();
+				   }
             	   inputArea.setText(null);
                }
             }

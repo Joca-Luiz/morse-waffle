@@ -18,6 +18,7 @@ public class WaffleCommands {
 					"03 - browser: open your default browser;" + newline +
 					"04 - morse <parameter> <string>: use the -t parameter to decode a string, and -c to encode a string. Function in tests can occur errors!" + newline +
 					"05 - fullnum <integer>: Use to enter a full number between 0 and 9999999999" + newline +
+					"06 - mensager <port> <user>: Use to connect to a port and send and receive messages through that port. ';exit' to clear the port and exit message mode" + newline +
 					newline + "New commands added as needed..." + newline +
 					"Made by Joca | Powered by java" + newline
 			);

@@ -9,6 +9,7 @@
     <li>browser: abre o seu navegador padrão</li>
     <li>morse < parameter > < string >: utilize o parametro -t para decodificar a string, e -c para codificar a string. Função em testes pode ocorrer erros!</li>
     <li>fullnum < numero >: Transforma números em números inteiros entre 0 e 9999999999.</li>
+    <li>messenger < port > < user >: Use para conectar a uma porta é enviar mensagens a partir desta porta! ";exit" para sair e limpar a porta.</li>
   </ul>
 
 <h3>🔧 Custumização</h3>

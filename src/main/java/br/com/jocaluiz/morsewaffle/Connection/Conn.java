@@ -15,7 +15,7 @@ public class Conn {
       database = "morsewaffle",
       url = "jdbc:mysql://" + host + "/" + database,
       user = "root",
-      password = "Batata123@";
+      password = "";
 
       conn = DriverManager.getConnection(url, user, password);
 
